@@ -1,0 +1,18 @@
+{
+    "login": "Login",
+    "register_now": "Register Now",
+    "welcome_back": "Welcome Back!",
+    "email": "Email Address",
+    "password": "Password",
+    "company_name": "Company Name",
+    "phone": "Phone Number",
+    "cr_number": "CR Number",
+    "customer": "Customer",
+    "forwarder": "Freight Forwarder",
+    "trial_msg": "3 Months Free Trial",
+    "i_want_to_ship": "I want to Ship",
+    "im_forwarder": "I'm a Forwarder",
+    "agree_terms": "I agree to the Terms & 1.5% commission policy.",
+    "dont_have_account": "Don't have an account?",
+    "email_placeholder": "name@company.com"
+}

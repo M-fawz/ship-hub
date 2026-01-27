@@ -1,0 +1,188 @@
+/* Container & Card */
+
+.login-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+
+/* Header Section */
+
+.login-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.login-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1e293b;
+    letter-spacing: -0.02em;
+}
+
+
+/* Dark Mode support for text */
+
+:global(.dark) .login-title {
+    color: #f8fafc;
+}
+
+
+/* Form Styling */
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding-left: 0.25rem;
+}
+
+.input-field {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background-color: #f1f5f9;
+    border: 2px solid transparent;
+    border-radius: 1rem;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.input-field:focus {
+    background-color: #ffffff;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(0, 86, 179, 0.1);
+}
+
+
+/* Submit Button */
+
+.submit-btn {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    margin-top: 0.5rem;
+}
+
+.submit-btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(0, 86, 179, 0.4);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+
+/* Footer & Links */
+
+.footer-text {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-top: 1rem;
+}
+
+.register-link {
+    color: var(--primary-color);
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 0.25rem;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
+
+
+/* Language Switcher Small Adjustments */
+
+.language-btn {
+    background: #f1f5f9;
+    border: none;
+    padding: 8px;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.language-btn:hover {
+    background: #e2e8f0;
+    color: var(--primary-color);
+}
+
+
+/* تعديل حاوية اختيار اللغة */
+
+.language-selector-container {
+    position: relative;
+    display: inline-block;
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    /* في العربي هنحتاج نغيرها لـ left لو بنستخدم RTL */
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    z-index: 1000;
+    min-width: 120px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.language-option {
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: background 0.2s;
+}
+
+.language-option:hover {
+    background: #f1f5f9;
+}
+
+
+/* لضمان الاتجاه الصحيح في العربي */
+
+:global([dir="rtl"]) .language-dropdown {
+    right: auto;
+    left: 0;
+    text-align: right;
+}

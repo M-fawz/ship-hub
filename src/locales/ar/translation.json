@@ -1,0 +1,18 @@
+{
+    "login": "تسجيل الدخول",
+    "register_now": "سجل الآن",
+    "welcome_back": "مرحباً بك مجدداً!",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "company_name": "اسم الشركة",
+    "phone": "رقم الهاتف",
+    "cr_number": "رقم السجل التجاري",
+    "customer": "عميل (شاحن)",
+    "forwarder": "وكيل شحن",
+    "trial_msg": "تجربة مجانية لمدة ٣ أشهر",
+    "i_want_to_ship": "أريد الشحن",
+    "im_forwarder": "أنا وكيل شحن",
+    "agree_terms": "أوافق على الشروط وسياسة عمولة الـ 1.5%.",
+    "dont_have_account": "ليس لديك حساب؟",
+    "email_placeholder": "name@company.com"
+}
