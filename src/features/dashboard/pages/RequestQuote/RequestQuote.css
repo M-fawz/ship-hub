@@ -1,0 +1,199 @@
+/* --- Animation Keyframes --- */
+
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.quote-page {
+    animation: fadeInSlideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.quote-header {
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.quote-header h1 {
+    color: var(--text-primary);
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.quote-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+
+/* --- Form Layout --- */
+
+.quote-form {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+
+/* --- Reusable Card Component --- */
+
+.form-card {
+    background: var(--card-bg);
+    padding: 28px;
+    border-radius: 24px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.form-card:hover {
+    transform: translateY(-4px);
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    color: var(--accent);
+}
+
+.card-title h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+
+/* --- Form Controls --- */
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-main);
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.input-group input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+
+/* --- Modern Mode Selector --- */
+
+.mode-selector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.mode-selector label {
+    padding: 24px 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 18px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--bg-main);
+}
+
+.mode-selector label:hover {
+    border-color: var(--accent);
+}
+
+.mode-selector label.active {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    color: var(--accent);
+    transform: scale(1.02);
+}
+
+.mode-selector input {
+    display: none;
+}
+
+
+/* --- Submit Action --- */
+
+.submit-quote-btn {
+    width: 100%;
+    margin-top: 40px;
+    padding: 20px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 18px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: filter 0.2s ease;
+}
+
+.submit-quote-btn:hover {
+    filter: brightness(1.1);
+}
+
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .full-width {
+        grid-column: span 1;
+    }
+    .mode-selector {
+        grid-template-columns: 1fr;
+    }
+    .quote-header h1 {
+        font-size: 1.7rem;
+    }
+}
