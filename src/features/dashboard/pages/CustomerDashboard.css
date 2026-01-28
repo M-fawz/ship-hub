@@ -1,24 +1,30 @@
-/* ================= ROOT ================= */
+/* ================= GLOBAL DASHBOARD ROOT ================= */
 
 .dashboard {
+    /* Full height view with a soft professional background */
     min-height: 100vh;
     background: #f8faff;
-    padding-bottom: 8rem;
-    /* space for bottom nav */
+    padding-bottom: 100px;
+    /* Buffer for the floating bottom navigation */
     font-family: 'Inter', sans-serif;
+    width: 100%;
+    overflow-x: hidden;
+    /* Prevents unwanted horizontal jitter on mobile */
 }
 
 
-/* ================= HEADER ================= */
+/* ================= HEADER & HERO SECTION ================= */
 
 .dashboard-header {
+    /* Deep navy branding with rounded bottom corners for a modern feel */
     background: #003580;
-    padding: 3rem 1.5rem 5rem;
-    border-bottom-left-radius: 3.5rem;
-    border-bottom-right-radius: 3.5rem;
+    padding: 4rem 1.5rem 6rem;
+    border-bottom-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
     color: white;
     position: relative;
-    z-index: 10;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .header-top {
@@ -35,20 +41,19 @@
 }
 
 .profile-icon {
+    /* Glassmorphism effect for the profile button */
     background: rgba(255, 255, 255, 0.15);
     padding: 0.7rem;
     border-radius: 1rem;
     backdrop-filter: blur(10px);
 }
 
-
-/* Header text */
-
 .header-content h2 {
-    font-size: 2.2rem;
+    /* Fluid typography that scales based on viewport width */
+    font-size: clamp(1.5rem, 7vw, 2.2rem);
     font-weight: 800;
-    margin-top: 2.5rem;
-    line-height: 1.2;
+    margin-top: 2rem;
+    line-height: 1.1;
 }
 
 .header-content p {
@@ -59,13 +64,14 @@
 }
 
 
-/* ================= CTA ================= */
+/* ================= CALL TO ACTION (CTA) ================= */
 
 .cta-wrapper {
+    /* Negative margin to overlap the CTA button over the header curve */
     padding: 0 1.5rem;
-    margin-top: -2rem;
+    margin-top: -2.5rem;
     position: relative;
-    z-index: 20;
+    z-index: 30;
 }
 
 .cta-btn {
@@ -83,34 +89,42 @@
 }
 
 .cta-btn:active {
+    /* Tactile feedback for mobile users */
     transform: scale(0.97);
 }
 
 
-/* ================= SHIPPING TYPES ================= */
+/* ================= SHIPPING CATEGORY CARDS ================= */
 
-.shipping-types {
+.shipping-types-container {
+    /* Horizontal scroll layout for mobile touch interaction */
     display: flex;
-    gap: 1.2rem;
-    padding: 2.5rem 1.5rem;
+    gap: 1rem;
+    padding: 2rem 1.5rem;
     overflow-x: auto;
     scrollbar-width: none;
+    /* Hides scrollbar on Firefox */
+    -webkit-overflow-scrolling: touch;
 }
 
-.shipping-types::-webkit-scrollbar {
+.shipping-types-container::-webkit-scrollbar {
     display: none;
+    /* Hides scrollbar on Chrome/Safari */
 }
 
 .shipping-card {
-    min-width: 110px;
+    /* Ensures 3 cards are visible with a small peek at the next one */
+    flex: 0 0 calc(33.33% - 1rem);
+    min-width: 100px;
     background: white;
-    padding: 1.6rem 1rem;
-    border-radius: 2.5rem;
+    padding: 1.5rem 0.5rem;
+    border-radius: 2rem;
     text-align: center;
     border: 1px solid #f1f5f9;
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
 }
 
 .icon-wrapper {
@@ -123,20 +137,14 @@
     margin-bottom: 0.8rem;
 }
 
-.shipping-card span {
-    font-weight: 700;
-    font-size: 0.9rem;
-    color: #475569;
-}
 
-
-/* ================= STATS ================= */
+/* ================= ANALYTICS & STATS ================= */
 
 .stats {
-    padding: 0 1.5rem;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 0 1.5rem;
 }
 
 .stat-card {
@@ -167,136 +175,15 @@
 }
 
 
-/* ================= BOTTOM NAV (MOBILE ONLY) ================= */
+/* ================= FLOATING BOTTOM NAVIGATION ================= */
 
 .bottom-nav {
-    position: fixed;
-    bottom: 1.5rem;
-    left: 1.5rem;
-    right: 1.5rem;
-    background: white;
-    height: 80px;
-    border-radius: 2.5rem;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    box-shadow: 0 15px 40px rgba(0, 53, 128, 0.12);
-    z-index: 100;
-}
-
-.nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    font-weight: 800;
-    color: #cbd5e1;
-}
-
-.nav-item span {
-    font-size: 0.65rem;
-}
-
-.nav-item.active {
-    color: #2563eb;
-}
-
-
-/* ================= DESKTOP ================= */
-
-@media (min-width: 1024px) {
-    .dashboard {
-        max-width: 1200px;
-        margin: auto;
-        padding-bottom: 2rem;
-    }
-    .shipping-types {
-        justify-content: space-between;
-    }
-    .stats {
-        grid-template-columns: repeat(4, 1fr);
-        max-width: 800px;
-        margin: 0 auto;
-    }
-    .bottom-nav {
-        display: none;
-    }
-}
-
-
-/* ================= ROOT ================= */
-
-.dashboard {
-    min-height: 100vh;
-    background: #f8faff;
-    padding-bottom: 100px;
-    /* مساحة أكبر عشان الـ nav ميتغطاش */
-    font-family: 'Inter', sans-serif;
-    width: 100%;
-    overflow-x: hidden;
-    /* يمنع السكرول يمين وشمال اللي بيبوظ الشكل */
-}
-
-
-/* ================= HEADER ================= */
-
-.dashboard-header {
-    background: #003580;
-    padding: 4rem 1.5rem 6rem;
-    /* زودنا الـ padding اللي فوق */
-    border-bottom-left-radius: 3rem;
-    border-bottom-right-radius: 3rem;
-    color: white;
-    position: relative;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-
-/* حل مشكلة العناوين الكبيرة */
-
-.header-content h2 {
-    font-size: clamp(1.5rem, 7vw, 2.2rem);
-    /* بيصغر الخط تلقائي لو الشاشة ضيقة */
-    font-weight: 800;
-    margin-top: 2rem;
-    line-height: 1.1;
-}
-
-
-/* ================= CTA ================= */
-
-.cta-wrapper {
-    padding: 0 1.5rem;
-    margin-top: -2.5rem;
-    /* نرفعه فوق الهيدر شوية */
-    position: relative;
-    z-index: 30;
-}
-
-
-/* ================= SHIPPING TYPES ================= */
-
-.shipping-types {
-    display: flex;
-    gap: 1rem;
-    padding: 2rem 1.5rem;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    /* سكرول ناعم للموبايل */
-}
-
-
-/* ================= BOTTOM NAV ================= */
-
-.bottom-nav {
+    /* Fixed centered container for mobile navigation */
     position: fixed;
     bottom: 1rem;
     left: 50%;
     transform: translateX(-50%);
-    /* عشان يتركز في نص الشاشة بالظبط */
     width: 90%;
-    /* ميبقاش لازق في الحواف */
     max-width: 400px;
     background: white;
     height: 70px;
@@ -306,92 +193,55 @@
     align-items: center;
     box-shadow: 0 10px 30px rgba(0, 53, 128, 0.2);
     z-index: 9999;
-    /* أعلى حاجة في الصفحة */
 }
 
-
-/* ================= DESKTOP FIX ================= */
-
-@media (min-width: 1024px) {
-    .dashboard {
-        margin-left: 0;
-        /* تأكد إن مفيش margin واخد مساحة السايدبار */
-        padding-left: 0;
-    }
-}
-
-
-/* حاوية الكروت */
-
-.shipping-types-container {
-    display: flex;
-    gap: 1rem;
-    padding: 2rem 1.5rem;
-    overflow-x: auto;
-    /* للموبايل: سكرول عرضي */
-    scrollbar-width: none;
-}
-
-.shipping-types-container::-webkit-scrollbar {
-    display: none;
-}
-
-
-/* شكل الكارت */
-
-.shipping-card {
-    flex: 0 0 calc(33.33% - 1rem);
-    /* الموبايل: ياخد تلت الشاشة */
-    min-width: 100px;
-    background: white;
-    padding: 1.5rem 0.5rem;
-    border-radius: 2rem;
-    text-align: center;
-    border: 1px solid #f1f5f9;
+.nav-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+    gap: 4px;
+    font-weight: 800;
+    color: #cbd5e1;
+    text-decoration: none;
+}
+
+.nav-item.active {
+    color: #2563eb;
 }
 
 
-/* ================= DESKTOP ================= */
+/* ================= DESKTOP RESPONSIVE OVERRIDES ================= */
 
 @media (min-width: 1024px) {
+    .dashboard {
+        max-width: 1200px;
+        margin: auto;
+        padding-bottom: 2rem;
+    }
     .shipping-types-container {
+        /* Disable horizontal scroll on desktop and center cards */
         overflow-x: hidden;
-        /* مفيش سكرول في الكمبيوتر */
         justify-content: center;
-        /* يتوسطنوا */
         gap: 2rem;
         max-width: 900px;
         margin: 0 auto;
     }
     .shipping-card {
         flex: 1;
-        /* يوزعوا المساحة بالتساوي */
         max-width: 200px;
-        /* ميكبروش بزيادة أوي */
         transition: transform 0.3s ease;
     }
     .shipping-card:hover {
         transform: translateY(-5px);
-        /* حركة خفيفة لما تقف بالماوس */
     }
     .stats {
+        /* Centered grid for analytics on wider screens */
         grid-template-columns: repeat(2, 300px);
-        /* يظبط عرض كروت الإحصائيات في النص */
         justify-content: center;
         margin-top: 2rem;
     }
-}
-
-
-/* تظبيط الـ Stats للموبايل */
-
-.stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    padding: 0 1.5rem;
+    .bottom-nav {
+        /* Hide the mobile nav in desktop view (Sidebar/TopNav preferred) */
+        display: none;
+    }
 }
