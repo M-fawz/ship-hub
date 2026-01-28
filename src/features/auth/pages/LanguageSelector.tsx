@@ -20,9 +20,10 @@ export const LanguageSelector = () => {
   };
 
   // Effect to update document.dir safely
-  useEffect(() => {
-    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-  }, [lang]);
+ useEffect(() => {
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+  document.documentElement.lang = lang; // ضيف السطر ده كمان
+}, [lang]);
 
   return (
     <div className="relative">
